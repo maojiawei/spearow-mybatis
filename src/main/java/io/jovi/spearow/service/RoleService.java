@@ -1,10 +1,9 @@
-package io.jovi.spearow.repository;
+package io.jovi.spearow.service;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import io.jovi.spearow.entity.UserDO;
-import org.springframework.stereotype.Repository;
+import com.baomidou.mybatisplus.extension.service.IService;
+import io.jovi.spearow.entity.RoleDO;
 
 /**
  * <p>
@@ -20,16 +19,14 @@ import org.springframework.stereotype.Repository;
  * @author Jovi
  * @version 1.0
  */
-@Repository
-public interface UserRepository extends BaseMapper<UserDO> {
+public interface RoleService extends IService<RoleDO> {
     /**
      *
      * 分页查询
      *
      * @param page 分页对象
-     * @param realName 真实姓名
+     * @param roleNo 角色编号
      * @return 分页对象
      */
-    IPage<UserDO> pagingBy(Page<?> page, String realName);
-
+    IPage<RoleDO> pagingBy(Page<?> page, String roleNo);
 }

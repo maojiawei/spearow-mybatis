@@ -3,9 +3,9 @@ package io.jovi.spearow.service.impl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import io.jovi.spearow.entity.UserDO;
-import io.jovi.spearow.repository.UserRepository;
-import io.jovi.spearow.service.UserService;
+import io.jovi.spearow.entity.RoleDO;
+import io.jovi.spearow.repository.RoleRepository;
+import io.jovi.spearow.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,18 +24,19 @@ import org.springframework.stereotype.Service;
  * @version 1.0
  */
 @Service
-public class UserServiceImpl  extends ServiceImpl<UserRepository, UserDO> implements UserService {
+public class RoleServiceImpl extends ServiceImpl<RoleRepository, RoleDO> implements RoleService {
     @Autowired
-    private UserRepository repository;
+    private RoleRepository repository;
+
     /**
      * 分页查询
      *
-     * @param page     分页对象
-     * @param realName 真实姓名
+     * @param page   分页对象
+     * @param roleNo 角色编号
      * @return 分页对象
      */
     @Override
-    public IPage<UserDO> pagingBy(Page<?> page, String realName) {
-        return repository.pagingBy(page, realName);
+    public IPage<RoleDO> pagingBy(Page<?> page, String roleNo) {
+        return repository.pagingBy(page, roleNo);
     }
 }

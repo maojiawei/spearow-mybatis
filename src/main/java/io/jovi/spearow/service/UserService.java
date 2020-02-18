@@ -22,9 +22,9 @@ import io.jovi.spearow.entity.UserDO;
 public interface UserService extends IService<UserDO> {
     /**
      *
-     * 查询 : 根据state状态查询用户列表，分页显示
+     * 分页查询
      *
-     * @param page 分页对象,xml中可以从里面进行取值,传递参数 Page 即自动分页,必须放在第一位(你可以继承Page实现自己的分页对象)
+     * @param page 分页对象
      * @param realName 真实姓名
      * @return 分页对象
      */

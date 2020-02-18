@@ -27,26 +27,21 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-@TableName("spearow_user")
-public class UserDO extends AbstractBaseDO {
+@TableName("spearow_role")
+public class RoleDO extends AbstractBaseDO {
     /**
      * 物理主键
      */
     @TableId(type = IdType.AUTO)
     private Long id;
     /**
-     * 用户名
+     * 角色编号
      */
-    @TableField(value = "username")
-    private String username;
+    @TableField(value = "role_no")
+    private String roleNo;
     /**
      * 密码
      */
-    @TableField(value = "password")
-    private String password;
-    /**
-     * 真实姓名
-     */
-    @TableField(value = "real_name")
-    private String realName;
+    @TableField(value = "name")
+    private String name;
 }
