@@ -7,6 +7,6 @@
     </select>
 
     <select id="pagingBy" resultType="io.jovi.spearow.entity.UserDO">
-        SELECT * FROM spearow_user
+        SELECT * FROM spearow_user where real_name like concat(#{realName},'%')
     </select>
 </mapper>

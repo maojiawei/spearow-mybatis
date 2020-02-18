@@ -70,7 +70,7 @@ public class UserServiceTest {
     public void pagingBy() {
         Page<UserDO> page = new Page<>();
         page.setCurrent(0).setSize(10);
-        IPage<UserDO> userPage = service.pagingBy(page,null);
+        IPage<UserDO> userPage = service.pagingBy(page,"dit");
 
         System.out.println(userPage.getRecords());
     }
