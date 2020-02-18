@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.jovi.spearow.SpearowApplication;
 import io.jovi.spearow.entity.User;
-import io.jovi.spearow.repository.UserRepository;
 import io.jovi.spearow.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
