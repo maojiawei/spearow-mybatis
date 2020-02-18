@@ -1,5 +1,7 @@
 package io.jovi.spearow.service.user;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.jovi.spearow.SpearowApplication;
 import io.jovi.spearow.entity.User;
 import io.jovi.spearow.repository.UserRepository;
@@ -55,5 +57,14 @@ public class UserServiceTest {
         }
 
         boolean save = service.saveBatch(list);
+    }
+
+    @Test
+    public void pagingBy() {
+        Page<User> page = new Page<>();
+        page.setCurrent(0).setSize(10);
+        IPage<User> userPage = service.pagingBy(page,null);
+
+        System.out.println(userPage.getRecords());
     }
 }

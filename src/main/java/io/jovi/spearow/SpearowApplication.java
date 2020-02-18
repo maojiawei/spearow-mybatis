@@ -17,7 +17,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Jovi
  * @version 1.0
  */
-@MapperScan(basePackages = "io.jovi.spearow.repository")
 @SpringBootApplication
 public class SpearowApplication {
 }
