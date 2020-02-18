@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,9 +35,25 @@ import java.util.List;
 public class UserServiceTest {
     @Autowired
     private UserService service;
+
     @Test
     public void list(){
         List<User> list = service.list();
         System.out.println(list);
+    }
+
+    @Test
+    public void insert() {
+        List<User> list = new ArrayList<>(10);
+        for(int i=0;i<10;i++){
+            User user = new User();
+            user.setUsername("jovi");
+            user.setPassword("bbb");
+            user.setRealName("jovi");
+            user.setCreateDate(new Date());
+            list.add(user);
+        }
+
+        boolean save = service.saveBatch(list);
     }
 }

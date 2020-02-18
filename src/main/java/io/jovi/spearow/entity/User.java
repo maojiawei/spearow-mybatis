@@ -1,10 +1,14 @@
 package io.jovi.spearow.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.Date;
 
 /**
  * <p>
@@ -29,6 +33,7 @@ public class User {
     /**
      * 物理主键
      */
+    @TableId(type = IdType.AUTO)
     private Long id;
     /**
      * 用户名
@@ -41,6 +46,9 @@ public class User {
     /**
      * 真实姓名
      */
-    private String realname;
-
+    private String realName;
+    /**
+     * 创建日期
+     */
+    private Date createDate;
 }
