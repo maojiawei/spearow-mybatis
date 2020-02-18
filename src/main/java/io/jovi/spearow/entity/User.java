@@ -1,5 +1,6 @@
 package io.jovi.spearow.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,6 +24,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
+@TableName("spearow_user")
 public class User {
     /**
      * 物理主键

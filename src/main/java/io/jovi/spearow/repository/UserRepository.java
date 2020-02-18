@@ -1,5 +1,6 @@
 package io.jovi.spearow.repository;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import io.jovi.spearow.entity.User;
 import org.springframework.stereotype.Repository;
 
@@ -18,11 +19,6 @@ import org.springframework.stereotype.Repository;
  * @version 1.0
  */
 @Repository
-public interface UserMapper {
-    /**
-     * 根据ID查询
-     * @param id
-     * @return
-     */
-    User findById(Long id);
+public interface UserRepository extends BaseMapper<User> {
+
 }

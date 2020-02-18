@@ -1,5 +1,8 @@
 package io.jovi.spearow;
 
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * <p>
  * Title:
@@ -14,5 +17,7 @@ package io.jovi.spearow;
  * @author Jovi
  * @version 1.0
  */
+@MapperScan(basePackages = "io.jovi.spearow.repository")
+@SpringBootApplication
 public class SpearowApplication {
 }
