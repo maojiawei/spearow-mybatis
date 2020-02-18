@@ -3,7 +3,7 @@ package io.jovi.spearow.repository;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import io.jovi.spearow.entity.User;
+import io.jovi.spearow.entity.UserDO;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
  * @version 1.0
  */
 @Repository
-public interface UserRepository extends BaseMapper<User> {
+public interface UserRepository extends BaseMapper<UserDO> {
     /**
      *
      * 查询 : 根据state状态查询用户列表，分页显示
@@ -30,6 +30,6 @@ public interface UserRepository extends BaseMapper<User> {
      * @param realName 真实姓名
      * @return 分页对象
      */
-    IPage<User> pagingBy(Page<?> page, String realName);
+    IPage<UserDO> pagingBy(Page<?> page, String realName);
 
 }

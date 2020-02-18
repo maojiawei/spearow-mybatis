@@ -3,7 +3,7 @@ package io.jovi.spearow.service.user;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.jovi.spearow.SpearowApplication;
-import io.jovi.spearow.entity.User;
+import io.jovi.spearow.entity.UserDO;
 import io.jovi.spearow.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -39,19 +39,27 @@ public class UserServiceTest {
 
     @Test
     public void list(){
-        List<User> list = service.list();
+        List<UserDO> list = service.list();
         System.out.println(list);
     }
 
     @Test
     public void insert() {
-        List<User> list = new ArrayList<>(10);
+        UserDO user = new UserDO();
+        user.setUsername("ditto");
+        user.setPassword("ditto");
+        user.setRealName("ditto");
+        boolean save = service.save(user);
+    }
+
+    @Test
+    public void insertBatch() {
+        List<UserDO> list = new ArrayList<>(10);
         for(int i=0;i<10;i++){
-            User user = new User();
+            UserDO user = new UserDO();
             user.setUsername("jovi");
             user.setPassword("bbb");
             user.setRealName("jovi");
-            user.setCreateDate(new Date());
             list.add(user);
         }
 
@@ -60,9 +68,9 @@ public class UserServiceTest {
 
     @Test
     public void pagingBy() {
-        Page<User> page = new Page<>();
+        Page<UserDO> page = new Page<>();
         page.setCurrent(0).setSize(10);
-        IPage<User> userPage = service.pagingBy(page,null);
+        IPage<UserDO> userPage = service.pagingBy(page,null);
 
         System.out.println(userPage.getRecords());
     }

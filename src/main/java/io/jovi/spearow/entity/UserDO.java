@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Date;
-
 /**
  * <p>
  * Title:
@@ -29,7 +27,7 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 @TableName("spearow_user")
-public class User {
+public class UserDO extends AbstractBaseDO {
     /**
      * 物理主键
      */
@@ -47,8 +45,4 @@ public class User {
      * 真实姓名
      */
     private String realName;
-    /**
-     * 创建日期
-     */
-    private Date createDate;
 }

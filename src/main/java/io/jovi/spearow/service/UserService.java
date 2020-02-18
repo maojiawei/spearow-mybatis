@@ -3,7 +3,7 @@ package io.jovi.spearow.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import io.jovi.spearow.entity.User;
+import io.jovi.spearow.entity.UserDO;
 
 /**
  * <p>
@@ -19,7 +19,7 @@ import io.jovi.spearow.entity.User;
  * @author Jovi
  * @version 1.0
  */
-public interface UserService extends IService<User> {
+public interface UserService extends IService<UserDO> {
     /**
      *
      * 查询 : 根据state状态查询用户列表，分页显示
@@ -28,5 +28,5 @@ public interface UserService extends IService<User> {
      * @param realName 真实姓名
      * @return 分页对象
      */
-    IPage<User> pagingBy(Page<?> page, String realName);
+    IPage<UserDO> pagingBy(Page<?> page, String realName);
 }

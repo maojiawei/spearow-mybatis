@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.jovi.spearow.repository.UserRepository">
 
-    <select id="findById" resultType="io.jovi.spearow.entity.User">
+    <select id="findById" resultType="io.jovi.spearow.entity.UserDO">
         select * from spearow_user where id = #{id}
     </select>
 
-    <select id="pagingBy" resultType="io.jovi.spearow.entity.User">
+    <select id="pagingBy" resultType="io.jovi.spearow.entity.UserDO">
         SELECT * FROM spearow_user
     </select>
 </mapper>
