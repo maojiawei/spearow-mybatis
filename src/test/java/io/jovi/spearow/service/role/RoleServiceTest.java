@@ -38,4 +38,17 @@ public class RoleServiceTest {
         role.setRoleNo("admin");
         roleService.save(role);
     }
+
+    @Test
+    public void update() {
+        RoleDO role = roleService.getById(2L);
+        System.out.println(role);
+        role.setName("super admin super");
+        roleService.saveOrUpdate(role);
+    }
+
+    @Test
+    public void delete() {
+        roleService.removeById(1L);
+    }
 }
