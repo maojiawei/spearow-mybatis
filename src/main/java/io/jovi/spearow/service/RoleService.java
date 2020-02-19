@@ -29,4 +29,13 @@ public interface RoleService extends IService<RoleDO> {
      * @return 分页对象
      */
     IPage<RoleDO> pagingBy(Page<?> page, String roleNo);
+
+    /**
+     *
+     * 根据角色编号查询
+     *
+     * @param roleNo 角色编号
+     * @return
+     */
+    RoleDO findByRoleNo(String roleNo);
 }

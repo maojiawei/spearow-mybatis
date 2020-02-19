@@ -51,4 +51,11 @@ public class RoleServiceTest {
     public void delete() {
         roleService.removeById(1L);
     }
+
+    @Test
+    public void findByRoleNo(){
+        String roleNo = "admin";
+        RoleDO role = roleService.findByRoleNo(roleNo);
+        System.out.println(role);
+    }
 }

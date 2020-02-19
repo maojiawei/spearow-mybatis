@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.jovi.spearow.entity.RoleDO;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -31,4 +32,14 @@ public interface RoleRepository extends BaseMapper<RoleDO> {
      * @return 分页对象
      */
     IPage<RoleDO> pagingBy(Page<?> page, String roleNo);
+
+    /**
+     *
+     * 根据角色编号查询
+     *
+     * @param roleNo 角色编号
+     * @return
+     */
+    @Select("select * from spearow_role where role_no = #{roleNo}")
+    RoleDO findByRoleNo(String roleNo);
 }
